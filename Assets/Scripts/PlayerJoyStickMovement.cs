@@ -34,6 +34,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
         else
         {
            transform.localScale  += sizeChange;
+           speed -= 0.0005f;
         }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
     }
