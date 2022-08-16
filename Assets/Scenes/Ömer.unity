@@ -1577,7 +1577,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1170, y: 2532}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -6910,7 +6910,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343574579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00013625032}
+  m_LocalPosition: {x: 0, y: 0, z: -0.000097821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664073214}
@@ -6918,8 +6918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -375}
-  m_SizeDelta: {x: 753.35, y: 60.02002}
+  m_AnchoredPosition: {x: 0, y: -405}
+  m_SizeDelta: {x: 1379.59, y: 177.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &343574581
 MonoBehaviour:
@@ -6941,7 +6941,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TAP TO PLAY
+  m_text: MOVE TO PLAY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e03f0215e1bade64785f4cb8aa35aa33, type: 2}
   m_sharedMaterial: {fileID: -1242753095545561304, guid: e03f0215e1bade64785f4cb8aa35aa33, type: 2}
@@ -6968,7 +6968,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 122.25
+  m_fontSize: 185.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7121,7 +7121,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440653205}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.000033539}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 664073214}
@@ -7129,8 +7129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: -702}
-  m_SizeDelta: {x: 316.56, y: 316.56}
+  m_AnchoredPosition: {x: -0.0000076294, y: -912}
+  m_SizeDelta: {x: 452.73, y: 452.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440653207
 MonoBehaviour:
@@ -7462,7 +7462,7 @@ GameObject:
   m_Component:
   - component: {fileID: 664073214}
   m_Layer: 5
-  m_Name: Tap To Play
+  m_Name: Move To Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8155,7 +8155,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.64168197, y: 0.017252574, z: -0.014440228, w: 0.7666408}
+  m_LocalRotation: {x: 0.641682, y: 0.01725262, z: -0.014440253, w: 0.7666408}
   m_LocalPosition: {x: -5.989731, y: 215.91907, z: -26.976112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -9338,7 +9338,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710365028}
-  m_LocalRotation: {x: 0.64168197, y: 0.017252574, z: -0.014440228, w: 0.7666408}
+  m_LocalRotation: {x: 0.641682, y: 0.01725262, z: -0.014440253, w: 0.7666408}
   m_LocalPosition: {x: -5.989731, y: 215.91907, z: -26.976112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9511,6 +9511,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2637813836002343081, guid: 965241d5cf0a79549961249168224a0c, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2637813836002343083, guid: 965241d5cf0a79549961249168224a0c, type: 3}
       propertyPath: m_Name
       value: Enemy
