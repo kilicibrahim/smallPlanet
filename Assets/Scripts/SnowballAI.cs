@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class SnowballAI : MonoBehaviour
@@ -7,15 +9,10 @@ public class SnowballAI : MonoBehaviour
         Chase,
         RunAway,
     }
+    private SizeChange sizeChange;
+    private PlayerJoyStickMovement playerJoyStickMovement;
     public NavMeshAgent agent;
     public Transform player;
-
-    // public LayerMask whatIsGround, whatIsPlayer;
-    // public Vector3 walkPoint;
-    // bool walkPointSet;
-    // public float walkPointRange; 
-    public float Range;
-    public bool playerInRange;
     private State state;
 
     [SerializeField] float inRange = 25f;
@@ -30,10 +27,15 @@ public class SnowballAI : MonoBehaviour
     }
     
     private void Update(){
+        float AIsize = sizeChange.size;
+        float playerSize = playerJoyStickMovement.size;
 
         float distance = Vector3.Distance(player.position, transform.position);
-        if(distance <= inRange) state = State.Chase;
-        
+
+        if(distance <= inRange && AIsize >= playerSize) state = State.Chase;
+        else if(distance <= inRange && AIsize < playerSize) state = State.RunAway;
+        else state = State.Roaming;
+
         switch(state){
             case State.Roaming:
                 Roaming();
@@ -46,17 +48,11 @@ public class SnowballAI : MonoBehaviour
             break;
         }
         
-        
-        //playerInRange = Physics.CheckSphere(transform.position, Range, whatIsPlayer);
-        //if(Vector3.Distance(transform.position, roamPos) < inRange)
-        //{
-        //    roamPos = GetRoamingPosition();
-        //}
-        
     }
-    // private Vector3 GetRoamingPosition(){
-    //     return startPos + new Vector3(UnityEngine.Random.Range(-1f,1f), UnityEngine.Random.Range(-1f,1f)).normalized * Random.Range(10f, 70f);
-    // }
+    private void FixedUpdate()
+    {
+        agent.speed -= 0.0005f;
+    }
 
     private void OnDrawGizmosSelected() {
         Gizmos.color = Color.red;
@@ -75,28 +71,7 @@ public class SnowballAI : MonoBehaviour
     private void Roaming()
     {
         agent.SetDestination(RandomRoamingPosition());
-        //if(!walkPointSet) SearchWalkPoint();
-
-        //if(walkPointSet)
-        //{
-       //     agent.SetDestination(walkPoint);
-       // }
-
-        //Vector3 distanceToWalkPoint = transform.position - walkPoint;
-       // if(distanceToWalkPoint.magnitude <1f) walkPointSet = false;
     }
-    // private void SearchWalkPoint()
-    // {
-    //     float randomZ = Random.Range(-walkPointRange, walkPointRange);
-    //     float randomX = Random.Range(-walkPointRange, walkPointRange);
-
-    //     walkPoint = new Vector3(transform.position.x + randomX, transform.position.y,  transform.position.z + randomZ);
-
-    //     if(Physics.Raycast(walkPoint, - transform.up, 2f, whatIsGround))
-    //     {
-    //         walkPointSet = true;
-    //     }
-    // }
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);

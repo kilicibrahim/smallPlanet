@@ -12,6 +12,8 @@ public class PlayerJoyStickMovement : MonoBehaviour
     Vector3 moveAmount;
     Vector3 smoothing;
     Rigidbody rb;
+    public float size = 10;
+    public float sizeChanger = 0.0005f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -34,6 +36,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
         else
         {
            transform.localScale  += sizeChange;
+           size += sizeChanger;
            speed -= 0.0005f;
         }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
