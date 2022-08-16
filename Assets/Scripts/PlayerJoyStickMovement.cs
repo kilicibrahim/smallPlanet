@@ -6,6 +6,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
 {
     public float speed = 10f;
     public FloatingJoystick floatingJoystick;
+    public Vector3 sizeChange;
 
     private Vector3 moveDirection; 
     Vector3 moveAmount;
@@ -15,6 +16,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         floatingJoystick = FindObjectOfType<FloatingJoystick>();
+        
     }
 
     void Update()
@@ -24,9 +26,15 @@ public class PlayerJoyStickMovement : MonoBehaviour
                         Vector3.forward * floatingJoystick.Vertical;
         Vector3 targetMoveAmount = moveDirection * speed;
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothing, 0.1f);
+        
     }
 
     private void FixedUpdate() {
-       rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
+        if(moveAmount == new Vector3(0,0,0)) return;
+        else
+        {
+           transform.localScale  += sizeChange;
+        }
+        rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
     }
 }
