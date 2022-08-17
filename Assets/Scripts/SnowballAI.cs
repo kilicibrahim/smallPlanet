@@ -81,11 +81,13 @@ public class SnowballAI : MonoBehaviour
     }
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        if(gameObject.GetComponent<NavMeshAgent>().enabled == false) return;
+        else agent.SetDestination(player.position);
     }
     private void RunFromPlayer()
     {
-        agent.SetDestination(-player.position);
+        if(gameObject.GetComponent<NavMeshAgent>().enabled == false) return;
+        else agent.SetDestination(-player.position);
     }
 
    
