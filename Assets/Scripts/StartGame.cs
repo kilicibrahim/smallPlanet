@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class StartGame : MonoBehaviour
 {
     public GameObject button, moveToPlay;
@@ -12,7 +12,7 @@ public class StartGame : MonoBehaviour
         moveToPlay.SetActive(false);
         foreach (var item in enemies)
         {
-            item.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            item.gameObject.GetComponent<NavMeshAgent>().enabled = true;
         }        
     }
 
