@@ -3889,7 +3889,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.64168197, y: 0.017252574, z: -0.014440228, w: 0.7666408}
+  m_LocalRotation: {x: 0.641682, y: 0.01725262, z: -0.014440253, w: 0.7666408}
   m_LocalPosition: {x: -5.989731, y: 215.91907, z: -26.976112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5092,6 +5092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 487065b37f5b70243a260f403974420c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  market: {fileID: 1131311322}
   button: {fileID: 784071042}
   moveToPlay: {fileID: 664073213}
   enemies:
@@ -5368,7 +5369,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710365028}
-  m_LocalRotation: {x: 0.64168197, y: 0.017252574, z: -0.014440228, w: 0.7666408}
+  m_LocalRotation: {x: 0.641682, y: 0.01725262, z: -0.014440253, w: 0.7666408}
   m_LocalPosition: {x: -5.989731, y: 215.91907, z: -26.976112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public GameObject button, moveToPlay;
+    public GameObject market, button, moveToPlay;
     public GameObject[] enemies;
     public GameObject treAgain;
     public void startGame()
     {
+        market.SetActive(false);
         button.SetActive(false);
         moveToPlay.SetActive(false);
         foreach (var item in enemies)
