@@ -10,12 +10,15 @@ public class PlayerJoyStickMovement : MonoBehaviour
     private SizeChange sizeChangee;
     float AIsize;
 
+    private bool obstacle = false;
+
     private Vector3 moveDirection; 
     Vector3 moveAmount;
     Vector3 smoothing;
     Rigidbody rb;
     public float size = 10;
     public float sizeChanger = 0.0005f;
+    public float sizeMinusChanger = -0.005f;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -37,11 +40,16 @@ public class PlayerJoyStickMovement : MonoBehaviour
 // size and speed changes for the player
     private void FixedUpdate() {
         if(moveAmount == new Vector3(0,0,0)) return;
-        else
+        else if(!obstacle)
         {
            transform.localScale  += sizeChange;
            size += sizeChanger;
            speed -= 0.0005f;
+        }
+        else if (obstacle)
+        {
+            transform.localScale -= sizeChange;
+            size -= sizeMinusChanger;
         }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
 
@@ -50,6 +58,22 @@ public class PlayerJoyStickMovement : MonoBehaviour
             transform.localScale = new Vector3(size, size, size);
             speed -= AIsize/1000;
             SizeChange.isEaten = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Obstacle"))
+        {
+            obstacle = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag.Equals("Obstacle"))
+        {
+            obstacle = true;
         }
     }
 }

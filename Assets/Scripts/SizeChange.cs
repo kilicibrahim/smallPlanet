@@ -7,6 +7,7 @@ public class SizeChange : MonoBehaviour
     public Vector3 sizeChange = new Vector3 (0.001f, 0.001f, 0.001f);
     public float size = 3;
     public float sizeChanger = 0.001f;
+    public float sizeMinusChanger = -0.005f;
     float AIsize;
     float playerSize; 
     int eatScore;
@@ -15,9 +16,11 @@ public class SizeChange : MonoBehaviour
     public static bool itEats = false;
 
     private PlayerJoyStickMovement playerJoyStickMovement;
+    private StartGame startGame;
     private void Start(){
 
         playerJoyStickMovement = GameObject.Find("Player").GetComponent<PlayerJoyStickMovement>();
+        startGame = GameObject.Find("GameManager").GetComponent<StartGame>();
     }
     private void FixedUpdate() {
     transform.localScale  += sizeChange;
@@ -42,8 +45,9 @@ public class SizeChange : MonoBehaviour
         {
             if(size >  playerSize){
                 Destroy(collision.gameObject);
-                SizeChange.itEats = true;       
-        }
+                SizeChange.itEats = true;
+                startGame.gameOver();
+            }
             else if(playerSize > size){
                 Destroy(gameObject);
                 eatScore +=1;
