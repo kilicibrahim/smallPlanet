@@ -14,6 +14,8 @@ public class SnowballAI : MonoBehaviour
     public NavMeshAgent agent;
     public Transform player;
     private State state;
+    float AIsize;
+    float playerSize; 
 
     [SerializeField] float inRange = 25f;
     [Range(1,500f)] public float walkRadius;
@@ -23,12 +25,13 @@ public class SnowballAI : MonoBehaviour
         state = State.Roaming;
     }
     private void Start(){
-
+        sizeChange = GameObject.Find("Enemy").GetComponent<SizeChange>();
+        playerJoyStickMovement = GameObject.Find("Player").GetComponent<PlayerJoyStickMovement>();
     }
     
     private void Update(){
-        float AIsize = sizeChange.size;
-        float playerSize = playerJoyStickMovement.size;
+        AIsize = sizeChange.size;
+        playerSize = playerJoyStickMovement.size;
 
         float distance = Vector3.Distance(player.position, transform.position);
 
@@ -79,5 +82,11 @@ public class SnowballAI : MonoBehaviour
     private void RunFromPlayer()
     {
         agent.SetDestination(-player.position);
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if(AIsize >  playerSize){
+
+        }
     }
 }
