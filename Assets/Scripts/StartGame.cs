@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
-    public GameObject market, button, moveToPlay;
+    public GameObject market, button, moveToPlay, leader;
     public GameObject[] enemies;
     public GameObject treAgain;
     public void startGame()
@@ -14,6 +14,7 @@ public class StartGame : MonoBehaviour
         market.SetActive(false);
         button.SetActive(false);
         moveToPlay.SetActive(false);
+        leader.SetActive(true);
         foreach (var item in enemies)
         {
             item.gameObject.GetComponent<NavMeshAgent>().enabled = true;
