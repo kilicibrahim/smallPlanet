@@ -7,6 +7,8 @@ public class PlayerJoyStickMovement : MonoBehaviour
     public float speed = 10f;
     public FloatingJoystick floatingJoystick;
     public Vector3 sizeChange;
+    private SizeChange sizeChangee;
+    float AIsize;
 
     private Vector3 moveDirection; 
     Vector3 moveAmount;
@@ -18,7 +20,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         floatingJoystick = FindObjectOfType<FloatingJoystick>();
-        
+        sizeChangee = GameObject.Find("Enemy").GetComponent<SizeChange>();
     }
 
     void Update()
@@ -29,8 +31,10 @@ public class PlayerJoyStickMovement : MonoBehaviour
         Vector3 targetMoveAmount = moveDirection * speed;
         moveAmount = Vector3.SmoothDamp(moveAmount, targetMoveAmount, ref smoothing, 0.1f);
         
-    }
+        AIsize = sizeChangee.size;
 
+    }
+// size and speed changes for the player
     private void FixedUpdate() {
         if(moveAmount == new Vector3(0,0,0)) return;
         else
@@ -40,5 +44,12 @@ public class PlayerJoyStickMovement : MonoBehaviour
            speed -= 0.0005f;
         }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
+
+        if(SizeChange.isEaten == true){
+            size += AIsize;
+            transform.localScale = new Vector3(size, size, size);
+            speed -= AIsize/1000;
+            SizeChange.isEaten = false;
+        }
     }
 }

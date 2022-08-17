@@ -33,6 +33,8 @@ public class SnowballAI : MonoBehaviour
         AIsize = sizeChange.size;
         playerSize = playerJoyStickMovement.size;
 
+        if(gameObject == null) return; 
+        else{
         float distance = Vector3.Distance(player.position, transform.position);
 
         if(distance <= inRange && AIsize >= playerSize) state = State.Chase;
@@ -50,7 +52,7 @@ public class SnowballAI : MonoBehaviour
                 RunFromPlayer();
             break;
         }
-        
+        }
     }
     private void FixedUpdate()
     {
@@ -73,7 +75,9 @@ public class SnowballAI : MonoBehaviour
     }
     private void Roaming()
     {
-        agent.SetDestination(RandomRoamingPosition());
+        if(gameObject.GetComponent<NavMeshAgent>().enabled == false) return;
+        else agent.SetDestination(RandomRoamingPosition());
+        
     }
     private void ChasePlayer()
     {
@@ -84,9 +88,5 @@ public class SnowballAI : MonoBehaviour
         agent.SetDestination(-player.position);
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if(AIsize >  playerSize){
-
-        }
-    }
+   
 }

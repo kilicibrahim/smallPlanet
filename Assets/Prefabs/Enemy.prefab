@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 2637813836002343075}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,8 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 2637813836002343075}
   player: {fileID: 0}
-  Range: 10
-  playerInRange: 1
   inRange: 25
   walkRadius: 500
 --- !u!114 &2637813836002343074
@@ -160,6 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeChange: {x: 0.001, y: 0.001, z: 0.001}
+  size: 3
+  sizeChanger: 0.001
 --- !u!195 &2637813836002343075
 NavMeshAgent:
   m_ObjectHideFlags: 0
