@@ -7,6 +7,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
     public float speed = 10f;
     public FloatingJoystick floatingJoystick;
     public Vector3 sizeChange;
+    public Vector3 sizeMinusChange;
     private SizeChange sizeChangee;
     float AIsize;
 
@@ -48,7 +49,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
         }
         else if (obstacle)
         {
-            transform.localScale -= sizeChange;
+            transform.localScale -= sizeMinusChange;
             size -= sizeMinusChanger;
         }
         rb.MovePosition(rb.position + transform.TransformDirection(moveAmount) * Time.fixedDeltaTime);
@@ -73,7 +74,7 @@ public class PlayerJoyStickMovement : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Obstacle"))
         {
-            obstacle = true;
+            obstacle = false;
         }
     }
 }
