@@ -1280,7 +1280,7 @@ Transform:
   m_GameObject: {fileID: 66706664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 66998266}
   - {fileID: 66996340}
@@ -2336,6 +2336,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2637813836002343074, guid: 965241d5cf0a79549961249168224a0c, type: 3}
+      propertyPath: size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637813836002343074, guid: 965241d5cf0a79549961249168224a0c, type: 3}
       propertyPath: sizeChanger
       value: 0.002
       objectReference: {fileID: 0}
@@ -2729,7 +2733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &445570907
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2738,7 +2742,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 445570906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1417067569}
@@ -2750,8 +2754,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -635.56006, y: 1433.73}
-  m_SizeDelta: {x: -1413.31, y: -2969.68}
+  m_AnchoredPosition: {x: -635.56006, y: 1647.21}
+  m_SizeDelta: {x: -1413.31, y: -3396.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &445570908
 MonoBehaviour:
@@ -2798,6 +2802,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2083783378}
     m_Modifications:
+    - target: {fileID: 1378773513415499027, guid: 1141cb93289a6b84c912c5221d415c5f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cf27aae89937b56449177bba72106a2f, type: 2}
     - target: {fileID: 4857109844605240354, guid: 1141cb93289a6b84c912c5221d415c5f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4017,7 +4025,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.641682, y: 0.01725262, z: -0.014440253, w: 0.7666408}
+  m_LocalRotation: {x: 0.64168197, y: 0.01725261, z: -0.014440243, w: 0.76664084}
   m_LocalPosition: {x: -5.989731, y: 215.91907, z: -26.976112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4416,7 +4424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 801, y: 1547}
+  m_AnchoredPosition: {x: 801, y: 1791}
   m_SizeDelta: {x: 217.1, y: 217.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131311324
@@ -4508,6 +4516,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2637813836002343074, guid: 965241d5cf0a79549961249168224a0c, type: 3}
+      propertyPath: size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2637813836002343075, guid: 965241d5cf0a79549961249168224a0c, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -6126,7 +6138,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710365028}
-  m_LocalRotation: {x: 0.641682, y: 0.01725262, z: -0.014440253, w: 0.7666408}
+  m_LocalRotation: {x: 0.64168197, y: 0.01725261, z: -0.014440243, w: 0.76664084}
   m_LocalPosition: {x: -5.989731, y: 215.91907, z: -26.976112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6397,7 +6409,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2637813836002343074, guid: 965241d5cf0a79549961249168224a0c, type: 3}
       propertyPath: size
-      value: 3
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637813836002343074, guid: 965241d5cf0a79549961249168224a0c, type: 3}
+      propertyPath: sizeChanger
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2637813836002343074, guid: 965241d5cf0a79549961249168224a0c, type: 3}
       propertyPath: sizeChange.x
