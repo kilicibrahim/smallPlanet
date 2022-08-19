@@ -3052,10 +3052,10 @@ MonoBehaviour:
   speed: 20
   floatingJoystick: {fileID: 1203819036}
   sizeChange: {x: 0.0025, y: 0.0025, z: 0.0025}
-  sizeMinusChange: {x: 0.005, y: 0.005, z: 0.005}
+  sizeMinusChange: {x: 0.05, y: 0.05, z: 0.05}
   size: 7.5
   sizeChanger: 0.0025
-  sizeMinusChanger: 0.005
+  sizeMinusChanger: 0.001
 --- !u!54 &644477108
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3254,26 +3254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db39fea7d211b0841aeb2d26183ee79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _navMeshChunks:
-  - EulerRotation: {x: 0, y: 0, z: 0}
-    Data: {fileID: 23800000, guid: b4e84919e93fc02468fae8f77b229f35, type: 2}
-    Enabled: 1
-  - EulerRotation: {x: 270, y: 0, z: 0}
-    Data: {fileID: 23800000, guid: 5da621b46fe6b494d9b03512cbed4031, type: 2}
-    Enabled: 1
-  - EulerRotation: {x: 180, y: 0, z: 0}
-    Data: {fileID: 23800000, guid: 80cb510d1a827e44696d646a90aadb41, type: 2}
-    Enabled: 1
-  - EulerRotation: {x: 90, y: 0, z: 0}
-    Data: {fileID: 23800000, guid: 157aa070af6f3f146a588824d2bd7399, type: 2}
-    Enabled: 1
-  - EulerRotation: {x: 0, y: 0, z: 270}
-    Data: {fileID: 23800000, guid: 868e262399264f141ba45423421602cc, type: 2}
-    Enabled: 1
-  - EulerRotation: {x: 0, y: 0, z: 90}
-    Data: {fileID: 23800000, guid: 300c880755b367049bb21c7f5638bad8, type: 2}
-    Enabled: 1
-  _pivot: {fileID: 66996224}
 --- !u!4 &726947721
 Transform:
   m_ObjectHideFlags: 0
